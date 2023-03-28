@@ -2,15 +2,18 @@
   <div id="app">
     <tool-bar></tool-bar>
     <router-view></router-view>
+    <SpinnerTest :loading="true"></SpinnerTest>
   </div>
 </template>
 
 <script>
 import ToolBar from '@/components/ToolBar.vue'
+import SpinnerTest from '@/components/SpinnerTest.vue'
 
 export default {
   components: {
     ToolBar,
+    SpinnerTest,
   }
 }
 </script>
