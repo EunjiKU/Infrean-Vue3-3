@@ -1,5 +1,6 @@
 <template>
   <header>
+    <p>2️⃣</p>
     <router-link to="/news">news</router-link>
     <router-link to="/ask">ask</router-link> 
     <router-link to="/jobs">jobs</router-link>
