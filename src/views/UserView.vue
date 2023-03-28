@@ -1,20 +1,29 @@
 <template>
   <div>
-    <p>😊 id : {{ fetchedUser.id }}</p>
+    <UserProfile>
+      <p slot="username">😊 id : {{ fetchedUser.id }}</p>
+      <p slot="karma">💰 karma : {{ fetchedUser.karma }}</p>
+      <p slot="time">⏰ created : {{ fetchedUser.created }}</p>
+    </UserProfile>
+    <!-- <p>😊 id : {{ fetchedUser.id }}</p>
     <p>💰 karma : {{ fetchedUser.karma }}</p>
     <p>⏰ created : {{ fetchedUser.created }}</p>
-    <p class="user_txt" v-html="fetchedUser.about"></p>
+    <p class="user_txt" v-html="fetchedUser.about"></p> -->
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
+import UserProfile from '@/components/UserProfile.vue'
 
 export default {
     computed: {
     ...mapGetters([
       'fetchedUser'
     ])
+  },
+  components: {
+    UserProfile
   },
   created() {
     const username = this.$route.params.id;
@@ -24,5 +33,4 @@ export default {
 </script>
 
 <style>
-.user_txt {margin: 10px 20px; padding: 10px; font-size: 12px; border: 1px solid #42b883;}
 </style>
